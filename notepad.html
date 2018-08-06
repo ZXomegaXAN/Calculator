@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Simple Notepad</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="navbar.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<a href="#" class="toggle" id="navHamburger">
+			<i class="fas fa-bars"></i>
+		</a>
+		<a href="#" class="brand">Tool Bar</a>
+		<div class="left">
+			<a href="index.html" class="link">Calculator</a>
+			<a href="notepad.html" class="link">Notepad</a>
+		</div>
+		<div class="right">
+			<a href="#" class="link">Link 3</a>
+		</div>
+	</div>
+	
+	<h1>A Simple Notepad</h1>
+	<div class="widget">
+		<input type="text" id="chat-input">
+		<button id="msgBtn" class="button2" onclick="sendMessage()">Enter</button>
+		<button id="delMsg" class="button2" onclick="clearmessages()">Clear All</button>
+		<div class="chat-wrapper"></div>
+	</div>
+
+	<div class="back_1"></div>
+	<div class="back_2"></div>
+	<div class="back_3"></div>
+</body>
+
+<script>
+	function sendMessage() {
+		const newDiv = document.createElement('div');
+		newDiv.classList.add('chatMsg');
+		let chatInput = document.querySelector('#chat-input').value;
+		const newContent = document.createTextNode(chatInput);
+		newDiv.appendChild(newContent);
+
+		const widget = document.querySelector('.widget');
+		let chatWrapper = document.querySelector('#chat-wrapper')
+		document.querySelector('#chat-input').value = '';
+
+		const delBtn = document.createElement('button');
+		delBtn.classList.add('.delBtn');
+		const x = document.createTextNode('X');
+		delBtn.appendChild(x);
+		document.body.appendChild(delBtn);
+		// x.classList.add('.delBtn');
+
+	//Puts new messages on top
+		if (document.querySelectorAll('.chatMsg').length > 0) {
+			chatWrapper = document.querySelectorAll('.chatMsg')[0];
+		}
+
+		widget.insertBefore(newDiv, chatWrapper);
+	}
+
+	function clearmessages() {
+		const messages = document.querySelectorAll('.chatMsg');
+		messages.forEach(message => message.remove());
+	}
+	
+	//Binds enter key to Submit button
+	var input = document.getElementById('chat-input');
+	
+	input.addEventListener('keyup', function(event) {
+		if (event.keyCode === 13) {
+			document.getElementById('msgBtn').click();
+		}
+	});
+
+	//Binds backspace key to Clear All button
+	input.addEventListener('keyup', function(event2) {
+		if (event2.keyCode === 27) {
+			document.getElementById('delMsg').click();
+		}
+	});
+
+		const navHamburger = document.querySelector('#navHamburger');
+		navHamburger.addEventListener('click', (e) => {
+			navHamburger.parentElement.classList.toggle('active');
+		})
+</script>
+</html>

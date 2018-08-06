@@ -2,11 +2,20 @@ body {
 	background: black;
 	color: red;
 	display: grid;
+	margin: 0;
 }
 
 .button {
 	background: grey;
 	font-size: 22px;
+}
+
+.button2 {
+	background: grey;
+}
+
+.delBtn {
+	color: red;
 }
 
 .main_wrapper {
@@ -29,7 +38,7 @@ body {
 	height: 100px;
 }
 
-.textfield {
+#textfield {
 	grid-area: 1/1/2/4;
 }
 
@@ -149,4 +158,10 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
+}
+
+.chatMsg {
+	color: red;
+	background: white;
+	opacity: .4;
 }

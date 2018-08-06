@@ -5,42 +5,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="navbar.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	<script type="text/javascript" src="script.js"></script>
 	<title>Calculator</title>
 </head>
 <body>
-		<div class="main_wrapper">
-			<h1>Calculator</h1>
-			<div class="calculator">
-				<form name="calculator">
-					<div class="keys">
-						<input class="textfield" type="textfield" name="ans" value="">
-						<input class="button one" type="button" value="1" onClick="document.calculator.ans.value+='1'">
-						<input class="button two" type="button" value="2" onClick="document.calculator.ans.value+='2'">
-						<input class="button three" type="button" value="3" onClick="document.calculator.ans.value+='3'">
-						<input class="button four" type="button" value="4" onClick="document.calculator.ans.value+='4'">
-						<input class="button five" type="button" value="5" onClick="document.calculator.ans.value+='5'">
-						<input class="button six" type="button" value="6" onClick="document.calculator.ans.value+='6'">
-						<input class="button seven" type="button" value="7" onClick="document.calculator.ans.value+='7'">
-						<input class="button eight" type="button" value="8" onClick="document.calculator.ans.value+='8'">
-						<input class="button nine" type="button" value="9" onClick="document.calculator.ans.value+='9'">
-						<input class="button minus" type="button" value="-" onClick="document.calculator.ans.value+='-'">
-						<input class="button add" type="button" value="+" onClick="document.calculator.ans.value+='+'">
-						<input class="button times" type="button" value="*" onClick="document.calculator.ans.value+='*'">
-						<input class="button divide" type="button" value="/" onClick="document.calculator.ans.value+='/'">
-						<input class="button decimal" type="button" value="." onClick="document.calculator.ans.value+='.'">
-						<input class="button open_paren" type="button" value="(" onClick="document.calculator.ans.value+='('">
-						<input class="button close_paren" type="button" value=")" onClick="document.calculator.ans.value+=')'">
-			
-						<input class="button zero" type="button" value="0" onClick="document.calculator.ans.value+='0'">
-						<input class="button clear" type="reset" value="C">
-						<input class="button equal" type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
-					</div>
-				</form>
-			</div>
+	<div class="navbar">
+		<a href="#" class="toggle" id="navHamburger">
+			<i class="fas fa-bars"></i>
+		</a>
+		<a href="#" class="brand">Tool Bar</a>
+		<div class="left">
+			<a href="index.html" class="link">Calculator</a>
+			<a href="notepad.html" class="link">Notepad</a>
 		</div>
+		<div class="right">
+			<a href="#" class="link">Link 3</a>
+		</div>
+	</div>
+	
+	<div class="main_wrapper">
+		<h1>Calculator</h1>
+		<div class="calculator">
+			<form name="calculator">
+				<div class="keys">
+					<input id="textfield" type="textfield" name="ans" value="">
+					<input class="button one" type="button" value="1" onClick="document.calculator.ans.value+='1'">
+					<input class="button two" type="button" value="2" onClick="document.calculator.ans.value+='2'">
+					<input class="button three" type="button" value="3" onClick="document.calculator.ans.value+='3'">
+					<input class="button four" type="button" value="4" onClick="document.calculator.ans.value+='4'">
+					<input class="button five" type="button" value="5" onClick="document.calculator.ans.value+='5'">
+					<input class="button six" type="button" value="6" onClick="document.calculator.ans.value+='6'">
+					<input class="button seven" type="button" value="7" onClick="document.calculator.ans.value+='7'">
+					<input class="button eight" type="button" value="8" onClick="document.calculator.ans.value+='8'">
+					<input class="button nine" type="button" value="9" onClick="document.calculator.ans.value+='9'">
+					<input class="button minus" type="button" value="-" onClick="document.calculator.ans.value+='-'">
+					<input class="button add" type="button" value="+" onClick="document.calculator.ans.value+='+'">
+					<input class="button times" type="button" value="*" onClick="document.calculator.ans.value+='*'">
+					<input class="button divide" type="button" value="/" onClick="document.calculator.ans.value+='/'">
+					<input class="button decimal" type="button" value="." onClick="document.calculator.ans.value+='.'">
+					<input class="button open_paren" type="button" value="(" onClick="document.calculator.ans.value+='('">
+					<input class="button close_paren" type="button" value=")" onClick="document.calculator.ans.value+=')'">
+					<input class="button zero" type="button" value="0" onClick="document.calculator.ans.value+='0'">
+					<input class="button clear" type="reset" value="C">
+					<input class="button equal" type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+				</div>
+			</form>
+		</div>
+	</div>
 
-		<div class="back_1"></div>
-		<div class="back_2"></div>
-		<div class="back_3"></div>
+	<div class="back_1"></div>
+	<div class="back_2"></div>
+	<div class="back_3"></div>
+
 </body>
+
+<script>
+	const navHamburger = document.querySelector('#navHamburger');
+	navHamburger.addEventListener('click', (e) => {
+		navHamburger.parentElement.classList.toggle('active');
+	})
+</script>
 </html>
