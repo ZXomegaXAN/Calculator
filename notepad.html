@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Simple Notepad</title>
+	<title>Notepad</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="navbar.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -56,20 +56,23 @@
 		document.querySelector('#chat-input').value = '';
 
 		const delBtn = document.createElement('button');
-		delBtn.classList.add('delBtn');
-		const x = document.createTextNode('X');
-		delBtn.appendChild(x);
+		delBtn.setAttribute("class", "remove");
+		delBtn.innerHTML = 'X'
 		newDiv.appendChild(delBtn);
-		// delBtn.setAttribute("onClick", "document.body.removeChild(this.parentNode)");
-		const clear = document.querySelector('delBtn');
-		// clear.parentElement(clear => clear.remove());
+		delBtn.setAttribute("onclick", "removeDiv(this);")
 
+		
+		
 	//Puts new messages on top
 		if (document.querySelectorAll('.chatMsg').length > 0) {
 			chatWrapper = document.querySelectorAll('.chatMsg')[0];
 		}
 
 		widget.insertBefore(newDiv, chatWrapper);
+	}
+
+	function removeDiv(btn){
+		((btn.parentNode).parentNode).removeChild(btn.parentNode);
 	}
 
 	function clearmessages() {

@@ -14,8 +14,20 @@ body {
 	background: grey;
 }
 
-.delBtn {
+.remove {
 	color: red;
+	right: 10px;
+	width: 40px;
+	justify-items: right;
+	position: absolute;
+}
+
+.chatMsg {
+	color: red;
+	background: white;
+	opacity: .4;
+	width: 100vw;
+	overflow: visible;
 }
 
 .main_wrapper {
@@ -87,27 +99,34 @@ body {
 }
 
 .equal {
-	grid-area: 5/3/6/4;
+	grid-area: 6/3/7/5;
+	color: white;
+	background: blue;
 }
 
 .add {
-	grid-area: 5/4/6/5;
+	grid-area: 5/3/6/5;
+	color: blue;
 }
 
 .minus {
 	grid-area: 4/4/5/5;
+	color: blue;
 }
 
 .times {
 	grid-area: 3/4/4/5;
+	color: blue;
 }
 
 .divide {
 	grid-area: 2/4/3/5;
+	color: blue;
 }
 
 .clear {
 	grid-area: 1/4/2/5;
+	color: red;
 }
 
 .open_paren {
@@ -158,10 +177,4 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-}
-
-.chatMsg {
-	color: red;
-	background: white;
-	opacity: .4;
 }
