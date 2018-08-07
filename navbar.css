@@ -72,5 +72,10 @@ html {
 	}
 	.navbar.active div {
 			display: block;
+			/* position: fixed; */
+	}
+
+	.navbar .right {
+		
 	}
 }

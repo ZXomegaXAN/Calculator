@@ -56,11 +56,13 @@
 		document.querySelector('#chat-input').value = '';
 
 		const delBtn = document.createElement('button');
-		delBtn.classList.add('.delBtn');
+		delBtn.classList.add('delBtn');
 		const x = document.createTextNode('X');
 		delBtn.appendChild(x);
-		document.body.appendChild(delBtn);
-		// x.classList.add('.delBtn');
+		newDiv.appendChild(delBtn);
+		// delBtn.setAttribute("onClick", "document.body.removeChild(this.parentNode)");
+		const clear = document.querySelector('delBtn');
+		// clear.parentElement(clear => clear.remove());
 
 	//Puts new messages on top
 		if (document.querySelectorAll('.chatMsg').length > 0) {
