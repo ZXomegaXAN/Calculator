@@ -7,6 +7,7 @@
 	<title>Notepad</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="navbar.css">
+	<link rel="stylesheet" href="background.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 	<style>
@@ -24,9 +25,11 @@
 		<div class="left">
 			<a href="index.html" class="link">Calculator</a>
 			<a href="notepad.html" class="link">Notepad</a>
+			<a href="game.html" class="link">Game</a>
+			<a href="stopwatch.html" class="link">Stopwatch</a>
 		</div>
 		<div class="right">
-			<a href="#" class="link">Link 3</a>
+			<a href="clock.html" class="link">Clock</a>
 		</div>
 	</div>
 	
@@ -37,13 +40,18 @@
 		<button id="delMsg" class="button2" onclick="clearmessages()">Clear All</button>
 		<div class="chat-wrapper"></div>
 	</div>
-
+	
 	<div class="back_1"></div>
 	<div class="back_2"></div>
 	<div class="back_3"></div>
 </body>
 
 <script>
+	const navHamburger = document.querySelector('#navHamburger');
+	navHamburger.addEventListener('click', (e) => {
+		navHamburger.parentElement.classList.toggle('active');
+	})
+
 	function sendMessage() {
 		const newDiv = document.createElement('div');
 		newDiv.classList.add('chatMsg');
@@ -95,10 +103,5 @@
 			document.getElementById('delMsg').click();
 		}
 	});
-
-		const navHamburger = document.querySelector('#navHamburger');
-		navHamburger.addEventListener('click', (e) => {
-			navHamburger.parentElement.classList.toggle('active');
-		})
 </script>
 </html>

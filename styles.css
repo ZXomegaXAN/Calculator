@@ -1,7 +1,6 @@
 body {
 	background: black;
 	color: red;
-	display: grid;
 	margin: 0;
 }
 
@@ -143,38 +142,12 @@ body {
 	height: 100vh;
 }
 
-.back_1 {
-	background: darkred;
-	-webkit-clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
-	clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
-	z-index: -2;
-	width: 100vw;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	position: fixed;	
-}
-
-.back_2 {
-	background: red;
-	-webkit-clip-path: polygon(100% 45%, 100% 100%, 0 100%, 0 80%);
-	clip-path: polygon(100% 45%, 100% 100%, 0 100%, 0 80%);
-	z-index: -3;
-	width: 100vw;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	position: fixed;
-}
-
-.back_3 {
-	background: grey;
-	-webkit-clip-path: polygon(0 0, 0 90%, 30% 0);
-	clip-path: polygon(0 0, 0 90%, 30% 0);
-	z-index: -4;
-	width: 100vw;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	position: fixed;
+@media (min-width: 48em) {
+	.widget {
+		margin-left: 15px;
+	}
+	
+	h1 {
+		margin-left: 15px;
+	}
 }
